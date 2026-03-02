@@ -21,7 +21,7 @@ The swarm is divided into two distinct IDE environments to ensure logic isolatio
 | Agent 2 | Cloud Backend | Windsurf | Firestore Admin SDK, Cloud Functions, server-side projections, REST API endpoints. |
 | Agent 3 | Dashboard/State | Windsurf | Global Zustand state management, Pro tier dashboard UI components as specified in the Master Task List, and server-side projection read layer for dashboard views. The `/web` package (upper tier) is scaffolded as an empty package with no UI implementation in this sprint. |
 | Agent 4 | PWA Core | Antigravity | Dexie.js repository implementations, offline sync engine, event sourcing, sync queue management, HLC ordering. |
-| Agent 5 | PWA UX | Antigravity | Hardware integration (ESC/POS printer, barcode scanner, cash drawer), performance budgeting, PWA UX polish. |
+| Agent 5 | PWA UX | Antigravity | Hardware integration (ESC/POS printer, barcode scanner, cash drawer), performance budgeting, PWA UX polish. Performance budgeting means: maintaining initial JS bundle under 150KB gzipped, virtualizing all list components (product search, customer lookup, transaction history), enforcing 48dp minimum touch targets, ensuring 60fps UI on low-end Android (no unnecessary re-renders), and validating high-contrast outdoor display readiness. |
 
 **Agent 1 commit protocol:** Agent 1 commits directly to `main` for all `/packages/shared` and `/packages/ui` updates. Agent 1 does not create feature branches. This is the Gatekeeper's exclusive direct-commit privilege — no other agent may commit directly to `main` under any circumstance.
 
@@ -103,6 +103,7 @@ Phase 0 is complete when all of the following are confirmed and merged to `main`
 - **Review Criteria:** Code is evaluated against all 16 Gatekeeper Rules (Section 4).
 - **Statelessness:** If an agent's code diverges from the SOT, the branch is discarded — not negotiated. Implementation is "transient labor" bound by the contracts. Discarding and regenerating from the SOT is faster and safer than merging divergent logic.
 - **PR Description:** Must include: task reference from Master Task List, what was implemented, what tests were added, and any edge cases handled.
+- **Review SLA:** Agent 1 reviews and resolves all PRs within the same micro-sprint day they are submitted. A PR sitting unreviewed overnight is a blocker. If Agent 1 cannot review same-day, the submitting agent pauses and does not begin the next task.
 
 ---
 

@@ -1,5 +1,5 @@
 # TINDAR — Development & Swarm Governance SOT
-**Status:** ACTIVE
+**Status:** LOCKED — Single Source of Truth. No changes without Gatekeeper sign-off.
 **Version:** 1.0 — Final
 **Authority:** Agent 1 (Master AI / Gatekeeper)
 **Methodology:** Contract-Based Implementation (CBI) — "Planning-Heavy, Implementation-Stateless"
@@ -242,4 +242,5 @@ This is intentional. Agents are contract-bound implementors. Their statelessness
 *TINDAR Development & Swarm Governance SOT v1.0 | March 2026*
 *Authority: Agent 1 (Master AI / Gatekeeper)*
 *Root document: TINDAR Master Architecture Document v3.0*
-*This document is ACTIVE. All agents are bound by its rules from the moment implementation begins.*
+*Status: LOCKED — This document is the Single Source of Truth for swarm governance.*
+*No modification without explicit Gatekeeper sign-off. All agents are bound by its rules from the moment implementation begins.*
